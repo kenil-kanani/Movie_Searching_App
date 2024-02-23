@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import Mainroutes from "./routes/Mainroutes";
 
 function App() {
 
   return (
     <>
-      <h1>Movie App</h1>
+      <nav>Simple nav</nav>
+      <Mainroutes />
     </>
   );
 }
