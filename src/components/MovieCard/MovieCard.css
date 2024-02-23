@@ -1,0 +1,24 @@
+.movie-wrapper {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 20px 0;
+    border-radius: 10px;
+    align-items: center;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.movie-title {
+    margin-top: 2rem;
+    font-size: x-large;
+    letter-spacing: 5px;
+}
+
+.movie-year,
+.movie-type {
+    font-size: larger;
+    margin-top: 1rem;
+}
