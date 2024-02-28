@@ -8,7 +8,7 @@
     color: white;
 }
 
-.navbar-wrapper div:nth-child(1) {
+#logo-name {
     font-size: xx-large;
     letter-spacing: 15px;
 }
@@ -25,4 +25,26 @@
     border-radius: 5px;
     border: none;
     color: white;
+}
+
+#movie-search-input:focus {}
+
+.search-bar {
+    position: relative;
+}
+
+#result-list {
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    font-size: large;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#result-list>div {
+    padding: 5px;
+    border-bottom: 1px solid black;
 }
