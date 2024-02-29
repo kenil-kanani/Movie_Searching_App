@@ -1,9 +1,14 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './Navbar.css'
+import useMovieList from '../../hooks/useMovieList';
+import useDebounce from '../../hooks/useDebounce';
 
 function Navbar() {
 
     const resultListRef = useRef(null)
+    const [searchTerm, setSearchTerm] = useState('')
+    const { movieList } = useMovieList(searchTerm)
+
     return (
         <div className="navbar-wrapper">
             <div id='logo-name'>Movie Base</div>
@@ -18,11 +23,27 @@ function Navbar() {
                     onBlur={() => {
                         resultListRef.current.style.display = 'none'
                     }}
+                    onChange={useDebounce((e) => {
+                        setSearchTerm(e.target.value)
+                    })}
                 />
                 <div id="result-list" ref={resultListRef}>
-                    <div>result 1</div>
-                    <div>result 2</div>
-                    <div>result 3</div>
+                    {
+                        movieList.length === 0 &&
+                        <div className="result-item">
+                            No movie found
+                        </div>
+                    }
+                    {
+                        movieList.length > 0 &&
+                        movieList.map((movie) => {
+                            return (
+                                <div key={movie.imdbID} className="result-item">
+                                    {movie.Title}
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
             <div>
