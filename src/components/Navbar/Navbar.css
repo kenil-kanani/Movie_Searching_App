@@ -8,9 +8,11 @@
     color: white;
 }
 
-#logo-name {
+#logo-name>a {
     font-size: xx-large;
     letter-spacing: 15px;
+    text-decoration: none;
+    color: white;
 }
 
 .navbar-wrapper div:nth-child(2) {
@@ -45,6 +47,11 @@
     max-height: 300px;
     overflow-y: scroll;
     border: 1px solid var(--light-prime-gray);
+}
+
+.result-item:hover {
+    background-color: gainsboro;
+    cursor: pointer;
 }
 
 #result-list>div {
