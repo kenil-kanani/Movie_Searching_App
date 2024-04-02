@@ -1,14 +1,20 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import './Navbar.css'
 import useMovieList from '../../hooks/useMovieList';
 import useDebounce from '../../hooks/useDebounce';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ThemeContext from '../../context/ThemeContext';
+
+import { FiSun } from "react-icons/fi";
+import { FaRegMoon } from "react-icons/fa";
 
 function Navbar() {
 
     const resultListRef = useRef(null)
     const [searchTerm, setSearchTerm] = useState('')
     const { movieList } = useMovieList(searchTerm)
+
+    const { theme, setTheme } = useContext(ThemeContext)
 
     const navigate = useNavigate()
 
@@ -53,8 +59,13 @@ function Navbar() {
                     }
                 </div>
             </div>
-            <div>
-                Theme
+            <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className='theme-icon'>
+                {
+                    theme === 'dark' ?
+                        <FiSun />
+                        :
+                        <FaRegMoon />
+                }
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 .navbar-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     border: 1px solid var(--dull-blue);
     padding: 1rem;
     align-items: center;
@@ -57,4 +57,9 @@
 #result-list>div {
     padding: 5px;
     border-bottom: 1px solid black;
+}
+
+.theme-icon{
+    font-size: 1.5rem;
+    cursor: pointer;
 }
